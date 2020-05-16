@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BatchPrintingService>
+	<PrinterName>PRINTER1</PrinterName>
+	<NotificationEmail>print_admins@example.com</NotificationEmail>
+	<CollateCopies copies="1" />
+	<FileList>
+		<StaticPattern>test*.pdf</StaticPattern>
+		<StaticCopies>2</StaticCopies>
+	</FileList>
+</BatchPrintingService>

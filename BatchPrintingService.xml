@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BatchPrintingService>
+	<PrinterName>PRINTER1</PrinterName>
+	<NotificationEmail only_errors="1">print_admins@example.com</NotificationEmail>
+	<CollateCopies copies="1" />
+	<FileList>
+		<File>
+			<Name>abc.pdf</Name>
+			<Copies>2</Copies>
+		</File>
+		<File>
+			<Name>def.pdf</Name>
+			<Copies>1</Copies>
+		</File>
+		<File>
+			<Name>ciao.pdf</Name>
+		</File>
+	</FileList>
+</BatchPrintingService>

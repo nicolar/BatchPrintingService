@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- BatchPrintingService DTD
+	 This DTD describes how to build an XML file for
+	 launch jobs on the printing service.
+	 -->
+
+<!DOCTYPE BatchPrintingService [
+<!ELEMENT BatchPrintingService (PrinterName,NotificationEmail?,CollateCopies?,FileList)>
+	<!-- The name of the printer (required) -->
+	<!ELEMENT PrinterName (#PCDATA)>
+	<!-- Notification email to send to when print job is submitted (optional) -->
+	<!ELEMENT NotificationEmail (#PCDATA)>
+	<!ATTLIST NotificationEmail
+			  only_errors CDATA #IMPLIED>
+	<!-- If this element is present, there will be n copies of files below
+		 printed in this order: 1234 1234 1234 ... and *not* 111 222 333 444 ... (optional)
+		 NOTE: Element Copies under File section will be ignored.
+		 -->
+	<!ELEMENT CollateCopies (#PCDATA)>
+	<!ATTLIST CollateCopies
+			  copies CDATA #REQUIRED>
+	<!-- List of files to print (required) -->
+	<!ELEMENT FileList ((StaticPattern,StaticCopies?)|File+)>
+	
+	<!-- Pattern of the files to print (required) -->
+	<!ELEMENT StaticPattern (#PCDATA)>
+	<!-- Number of copies (optional)
+		 NOTE: If element CollateCopies is present this value will be ignored. -->
+	<!ELEMENT StaticCopies (#PCDATA)>
+	
+	<!ELEMENT File (Name,Copies?)>
+		<!-- Name of the file to print (required) -->
+		<!ELEMENT Name (#PCDATA)>
+		<!-- Number of copies (optional)
+			 NOTE: If element CollateCopies is present this value will be ignored. -->
+		<!ELEMENT Copies (#PCDATA)>
+]>
